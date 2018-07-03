@@ -44,16 +44,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-//    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        if shortcutItem.type == "us.devanb.addCardToDeck" {
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let addCardToDeck = sb.instantiateInitialViewController("AddCardToDeck") as! AddCardToDeckViewController
-//            let root = UIApplication.shared.keyWindow?.rootViewController
-//
-//            root?.presentViewController(addCardToDeck, animated: false, completion: { () -> Void in
-//                completionHandler(true)
-//            })
-//        }
-//    }
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if shortcutItem.type == "us.devanb.apprentice.addCard" {
+            let addCard = AddCardViewController()
+            let root = UIApplication.shared.keyWindow?.rootViewController
+
+            root?.present(addCard, animated: false, completion: { () -> Void in
+                completionHandler(true)
+            })
+        } else if shortcutItem.type == "us.devanb.apprentice.viewAllCards" {
+            let walkthrough = WalkthroughViewController()
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(walkthrough, animated: false, completion: { () -> Void in
+                completionHandler(true)
+            })
+        }
+    }
 }
 

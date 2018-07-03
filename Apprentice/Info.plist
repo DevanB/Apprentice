@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Add Card to Deck</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>us.devanb.apprentice.ddCardToDeck</string>
+			<string>us.devanb.apprentice.addCard</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>

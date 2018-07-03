@@ -11,6 +11,8 @@
 		FB1B1A8020E855CC00FFF9F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1B1A7F20E855CC00FFF9F3 /* ViewController.swift */; };
 		FB1B1A8520E855CC00FFF9F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1B1A8420E855CC00FFF9F3 /* Assets.xcassets */; };
 		FB1B1A8820E855CC00FFF9F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1B1A8620E855CC00FFF9F3 /* LaunchScreen.storyboard */; };
+		FB62D5FE20EB11B0004A9980 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62D5FD20EB11B0004A9980 /* WalkthroughViewController.swift */; };
+		FB62D60020EB11CD004A9980 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB62D5FF20EB11CD004A9980 /* AddCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		FB1B1A8420E855CC00FFF9F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB1B1A8720E855CC00FFF9F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB1B1A8920E855CC00FFF9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB62D5FD20EB11B0004A9980 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		FB62D5FF20EB11CD004A9980 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,9 @@
 		FB1B1A7C20E855CC00FFF9F3 /* Apprentice */ = {
 			isa = PBXGroup;
 			children = (
+				FB62D5FC20EAECA6004A9980 /* Controllers */,
+				FB62D5FA20EAEC7C004A9980 /* Models */,
+				FB62D5FB20EAECA1004A9980 /* Views */,
 				FB1B1A7D20E855CC00FFF9F3 /* AppDelegate.swift */,
 				FB1B1A7F20E855CC00FFF9F3 /* ViewController.swift */,
 				FB1B1A8420E855CC00FFF9F3 /* Assets.xcassets */,
@@ -59,6 +66,29 @@
 				FB1B1A8920E855CC00FFF9F3 /* Info.plist */,
 			);
 			path = Apprentice;
+			sourceTree = "<group>";
+		};
+		FB62D5FA20EAEC7C004A9980 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB62D5FB20EAECA1004A9980 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB62D5FC20EAECA6004A9980 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB62D5FD20EB11B0004A9980 /* WalkthroughViewController.swift */,
+				FB62D5FF20EB11CD004A9980 /* AddCardViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB62D60020EB11CD004A9980 /* AddCardViewController.swift in Sources */,
+				FB62D5FE20EB11B0004A9980 /* WalkthroughViewController.swift in Sources */,
 				FB1B1A8020E855CC00FFF9F3 /* ViewController.swift in Sources */,
 				FB1B1A7E20E855CC00FFF9F3 /* AppDelegate.swift in Sources */,
 			);
