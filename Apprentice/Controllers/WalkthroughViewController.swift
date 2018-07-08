@@ -9,32 +9,127 @@
 import UIKit
 
 class WalkthroughViewController: UIViewController {
+    
+    let greetingsTextView: UITextView = {
+       let textView = UITextView()
+        textView.text = "Greetings\nApprentice!"
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .clear
+        textView.textColor = .black
+        textView.font = .largeHeading
+        textView.textAlignment = .center
+        textView.isEditable = false
+        textView.isScrollEnabled = false
+        return textView
+    }()
+    
+    let slide1TextView: UITextView = {
+       let textView = UITextView()
+        textView.text = "Organize your cards so that\nyou can defend the realm\nfrom evildoers."
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .clear
+        textView.textColor = .black
+        textView.font = .body
+        textView.textAlignment = .center
+        textView.isEditable = false
+        textView.isScrollEnabled = false
+        return textView
+    }()
+    
+    let redCardImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: " Card A"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    let slide2TextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Add cards\nto your\ncollection"
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .clear
+        textView.textColor = .white
+        textView.font = .largeHeading
+        textView.textAlignment = .center
+        textView.isEditable = false
+        textView.isScrollEnabled = false
+        return textView
+    }()
+    
+    let purpleCardImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: " Card B"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    let slide3TextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Card lorem\nipsum set\ndolor"
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .clear
+        textView.textColor = .white
+        textView.font = .largeHeading
+        textView.textAlignment = .center
+        textView.isEditable = false
+        textView.isScrollEnabled = false
+        return textView
+    }()
+    
+    let getStartedButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Get Started", for: .normal)
+        button.tintColor = .green
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
+        view.addSubview(greetingsTextView)
+        view.addSubview(slide1TextView)
+        view.addSubview(redCardImageView)
+        redCardImageView.addSubview(slide2TextView)
+        view.addSubview(purpleCardImageView)
+        purpleCardImageView.addSubview(slide3TextView)
+        view.addSubview(getStartedButton)
         
-        view.addSubview(blueView)
-        
-        blueView.anchor(top: view.safeAreaLayoutGuide.topAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.leadingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupLayout()
     }
     
+    private func setupLayout() {
+        greetingsTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        greetingsTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50.0).isActive = true
+        greetingsTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        greetingsTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        greetingsTextView.heightAnchor.constraint(equalToConstant: 102.0).isActive = true
+        
+        slide1TextView.topAnchor.constraint(equalTo: greetingsTextView.bottomAnchor).isActive = true
+        slide1TextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        slide1TextView.widthAnchor.constraint(equalToConstant: 230.0).isActive = true
 
-    /*
-    // MARK: - Navigation
+        redCardImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        redCardImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        redCardImageView.widthAnchor.constraint(equalToConstant: 311).isActive = true
+        redCardImageView.heightAnchor.constraint(equalToConstant: 440).isActive = true
+        
+        slide2TextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        slide2TextView.topAnchor.constraint(equalTo: redCardImageView.topAnchor, constant: 120).isActive = true
+        slide2TextView.bottomAnchor.constraint(equalTo: redCardImageView.bottomAnchor, constant: 193).isActive = true
+        
+        purpleCardImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        purpleCardImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        purpleCardImageView.widthAnchor.constraint(equalToConstant: 311).isActive = true
+        purpleCardImageView.heightAnchor.constraint(equalToConstant: 440).isActive = true
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        slide3TextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        slide3TextView.topAnchor.constraint(equalTo: purpleCardImageView.topAnchor, constant: 120).isActive = true
+        slide3TextView.bottomAnchor.constraint(equalTo: purpleCardImageView.bottomAnchor, constant: 193).isActive = true
+        
+        getStartedButton.topAnchor.constraint(equalTo: purpleCardImageView.bottomAnchor)
+        getStartedButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        
     }
-    */
-
 }

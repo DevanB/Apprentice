@@ -15,10 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = window ?? UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.rootViewController = ViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        
+        window?.rootViewController = WalkthroughViewController()
+        
         return true
     }
 
@@ -45,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print(shortcutItem.type)
         if shortcutItem.type == "us.devanb.apprentice.addCard" {
             let addCard = AddCardViewController()
             let root = UIApplication.shared.keyWindow?.rootViewController
